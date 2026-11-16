@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "Reading large text collections: an embedding-based pipeline that groups short texts into themes, with an interactive dashboard"
+type: software
+authors:
+  - family-names: "Nuruzzaman"
+    given-names: "Md"
+    affiliation: "Interaction Data Lab, INSERM U1338"
+  - family-names: "Tupikina"
+    given-names: "Liubov"
+    affiliation: "Learning Planet Institute"
+  - family-names: "Santolini"
+    given-names: "Marc"
+    affiliation: "Interaction Data Lab, INSERM U1338"
+repository-code: "https://github.com/InteractionDataLab/broad-listening"
+license: Apache-2.0

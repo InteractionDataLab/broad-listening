@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Reading large text collections</title>
+<meta name="description" content="A method that groups thousands of short texts into themes, shown on two collections: 1,505 survey answers and 3,912 passages of public reports. Each text is a dot on a map you can turn and read.">
+<meta property="og:title" content="Reading large text collections">
+<meta property="og:description" content="1,505 survey answers and 3,912 report passages, on maps you can turn and read.">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/site.css?v=2026-11-10n">
+<link rel="stylesheet" href="assets/look.css?v=2026-11-10n">
+</head>
+<body class="b home">
+<a class="skip" href="#main">Skip to the content</a>
+<header class="bar"><div class="wrap">
+  <a class="brand" href="index.html">Reading large text collections</a>
+  <nav aria-label="Main">
+    <a href="igem.html">Survey answers</a>
+    <a href="msf.html">Public reports</a>
+    <a href="about.html">About</a>
+  </nav>
+</div></header>
+<main id="main"><div class="wrapB">
+<h1>Reading thousands of answers and reports</h1>
+<p class="lede">Open survey questions and field reports produce thousands of short texts, and then someone has to read it all. Here, each dot is one text. Texts that say similar things sit close together, and each colour is a theme.</p>
+
+<div class="maps">
+  <article class="case">
+    <a class="maplink" href="igem.html" aria-label="Open the survey answers"><canvas data-dots="igem" data-labels="5" data-r="2.6" role="img" aria-label="Map of the survey answers, one dot per answer, coloured by theme"></canvas></a>
+    <p class="mapnote">One dot per answer. Grey dots have no theme.</p>
+    <p class="src">Case study 1 · survey answers</p>
+    <h2><a href="igem.html">What iGEM participants said about their year</a></h2>
+    <p class="say"><b>27%</b> of undergraduates and <b>3%</b> of high-school students wrote about money problems. The gap holds between groups of teams, but not once region is in the same model.</p>
+    <p class="meta">1,505 answers · 332 participants · 7 main themes, 39 sub-themes · team and person names removed</p>
+    <a class="go" href="igem.html">Open the map and the answers</a>
+  </article>
+  <article class="case">
+    <a class="maplink" href="msf.html" aria-label="Open the public reports"><canvas data-dots="msf" data-labels="5" data-r="1.7" role="img" aria-label="Map of the report passages, one dot per passage, coloured by theme"></canvas></a>
+    <p class="mapnote">One dot per passage of a public report.</p>
+    <p class="src">Case study 2 · public reports</p>
+    <h2><a href="msf.html">What Médecins Sans Frontières writes about, country by country</a></h2>
+    <p class="say"><b>67%</b> of one-country stories on DR Congo mention infectious disease, against <b>5%</b> on Palestine. The figure counts how often the reports write about it. It says nothing about how common the disease is.</p>
+    <p class="meta">893 stories · 3,912 passages · 9 themes, 15 sub-themes · every passage linked to its source</p>
+    <a class="go" href="msf.html">Open the map and the reports</a>
+  </article>
+</div>
+
+<section class="how">
+  <h2>How it works</h2>
+  <p>The same steps run on both collections.</p>
+  <ol class="steps">
+    <li><b>Clean</b> the texts, but keep them as people wrote them.</li>
+    <li><b>Describe</b> each text with numbers that capture its meaning, using a multilingual model (Qwen3-Embedding-8B). Nothing is translated.</li>
+    <li><b>Map</b> the texts so that similar ones sit close together (UMAP), in three dimensions for reading and in more for grouping.</li>
+    <li><b>Group</b> the crowded parts of the map into sub-themes (HDBSCAN) and merge close sub-themes into main themes (Ward). Texts that fit nowhere stay unplaced, and we count them.</li>
+    <li><b>Name</b> each theme with a language model, and keep the name only if it passes separate checks.</li>
+    <li><b>Compare</b> groups of people or places, correcting for the number of tests.</li>
+  </ol>
+
+</section>
+
+<section class="not">
+  <h2>What it cannot tell you</h2>
+  <p>It does not replace reading. A count shows how often a topic comes up in the texts. How common it is in the world is another question. When two groups differ, we report a link and claim no cause.</p>
+  <p>Every page says which themes are unstable, which names failed their checks, and what was left out. No person has yet coded a sample by hand to compare with the machine; that is the next step.</p>
+</section>
+
+<p class="homeby">Marc Santolini, Liubov Tupikina and Md Nuruzzaman · Interaction Data Lab, INSERM U1338 · November 2026</p>
+</div></main>
+<footer class="site"><div class="wrap">
+  <p>Text and figures: CC BY 4.0. Code: Apache-2.0, see <a href="https://github.com/InteractionDataLab/broad-listening">the repository</a>. <a href="about.html">About this project</a>.</p>
+</div></footer>
+<script src="assets/palette.js?v=2026-11-10n" defer></script>
+<script src="assets/dotmap.js?v=2026-11-10n" defer></script>
+</body>
+</html>
