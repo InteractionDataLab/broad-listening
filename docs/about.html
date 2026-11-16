@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>About this project: reading large text collections</title>
-<meta name="description" content="Who made this, what the pipeline does, how to cite it, and what we can and cannot say about the data.">
+<meta name="description" content="What this site shows, who made it, the data, how the themes were made, what the results can and cannot tell, the licences and how to cite it.">
 <link rel="stylesheet" href="assets/site.css?v=2026-11-10n">
 <link rel="stylesheet" href="assets/look.css?v=2026-11-10n">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -25,18 +25,21 @@
   <p class="lede">A pipeline for finding themes in open-ended texts, and two worked examples of what it produces.</p>
 </div></section>
 <section class="block"><div class="wrap"><div style="max-width:760px">
-  <h2>Who</h2>
-  <p>This work was supervised by Marc Santolini (Interaction Data Lab, INSERM U1338) and co-supervised by Dr Liubov Tupikina (Learning Planet Institute). They guided it at every step. It began during a research internship of Md Nuruzzaman (M1 AIRE, Université Paris Cité, within the ANR project Open Futures) and continued in a second internship at the Interaction Data Lab. The public-reports example comes from a workshop project at the Learning Planet Institute, supervised by Dr Liubov Tupikina.</p>
-  <p>The starting point was more than 1,500 open answers from the iGEM 2025 survey. Those answers were the richest part of the survey, and also the part nobody had time to read. So we looked for a way to read thousands of answers without losing what each person says. On this site we show what the method finds, and also where it is still weak, so that you can judge it for yourself.</p>
-  <h2 style="margin-top:28px">What the pipeline does</h2>
-  <p>It cleans a set of short texts and turns each into a vector of numbers with a multilingual embedding model. It then groups similar texts, names each group with a language model, and tests how themes differ between groups of people. Every step is allowed to fail, and a theme that fails a check is marked as such.</p>
-  <h2 style="margin-top:28px">Data and what we show</h2>
-  <p><b>Survey answers.</b> Participants of the iGEM 2025 Jamboree answered a survey with five open questions. The answers are shown with team names and people’s names replaced by tags such as [name] or [city], from the analysis run of 2 November 2026. No team name, participant identifier or country is stored with an answer, the answers are stored in a shuffled order, and no answer is shown with its country, team or award. Groups such as countries or award levels appear only as counts and shares of people. Showing the answers this way was agreed with Marc Santolini in November 2026.</p>
-  <p><b>Public reports.</b> Public reports of Médecins Sans Frontières, collected from ReliefWeb on 16 September 2026. Passages are shown as published, each with a link to its source. This site is not made by, and is not linked to, Médecins Sans Frontières.</p>
+  <h2>What this site shows</h2>
+  <p>This site shows a method for reading large collections of short texts. The method groups the texts into themes, and an interactive dashboard lets a reader move from the whole collection to a single text and back. We applied it to two collections: open answers from a survey of iGEM participants, and public reports of Médecins Sans Frontières (MSF). The method is described in a concept note, “A broad-listening pipeline for the thematic analysis of qualitative text data: the cases of open-ended survey answers and public reports” (Nuruzzaman, Tupikina and Santolini, 2026).</p>
+  <h2 style="margin-top:28px">Who made it</h2>
+  <p>The work was carried out by Md Nuruzzaman during two internships. It began in the first year of the master’s programme AIRE at Université Paris Cité, within the ANR project Open Futures, and continued at the Interaction Data Lab. Marc Santolini supervised the work and Liubov Tupikina co-supervised it. The MSF example comes from a workshop project at the Learning Planet Institute, supervised by Liubov Tupikina.</p>
+  <h2 style="margin-top:28px">The data</h2>
+  <p><i>Survey answers.</i> The iGEM 2025 Jamboree took place in Paris. Afterwards, 332 participants from 125 teams answered five open questions, which gave 1,505 answers. On this site the answers are shown with the names of people, teams and places replaced by a tag in square brackets, such as [name] or [city]. No team name, participant identifier or country is stored with an answer, and groups appear only as counts and shares of people. Showing the answers in this form was agreed with Marc Santolini in November 2026.</p>
+  <p><i>Public reports.</i> On 16 September 2026 we collected 1,481 reports published by MSF on ReliefWeb, for eight countries and the years 2023 to 2025. Of these, 1,362 had usable text. Many stories exist in several languages or versions, so we kept each story once: 893 stories, cut into 3,912 passages. Every passage links to its source. The texts belong to MSF. This site is not made by MSF and is not linked to it.</p>
+  <h2 style="margin-top:28px">How the themes were made</h2>
+  <p>Each text is turned into a list of numbers by a multilingual embedding model, so that texts with a similar meaning get similar numbers. A grouping method then finds crowded areas and merges close areas into themes. A language model proposes a name for each theme, and a name is kept only if it passes separate checks. Groups of people or places are compared with permutation tests, corrected for the number of tests. The report and the data folder give the details.</p>
+  <h2 style="margin-top:28px">What the results can and cannot tell</h2>
+  <p>The themes and their names were produced by machine, and they have not yet been compared with a sample coded by a person. A share shows how often a topic appears in the texts. It does not show how common the topic is in the world. A difference between groups is an association and not a cause. About half of the MSF passages were first left unplaced by the grouping method and were joined to the nearest sub-theme afterwards. Each page lists its own limits.</p>
   <h2 style="margin-top:28px">Licences</h2>
-  <p>Page text and figures: CC BY 4.0. Code: Apache-2.0, in <a href="https://github.com/InteractionDataLab/broad-listening">the repository</a>. Report texts belong to their publisher. Font: Atkinson Hyperlegible Next (Braille Institute), under the SIL Open Font License.</p>
+  <p>Text and figures: CC BY 4.0. Code: Apache-2.0, in <a href="https://github.com/InteractionDataLab/broad-listening">the repository</a>. The MSF reports belong to their publisher. Font: Atkinson Hyperlegible Next (Braille Institute of America), under the SIL Open Font License.</p>
   <h2 id="cite" style="margin-top:28px">How to cite</h2>
-  <p>This site: Nuruzzaman, M., Tupikina, L., &amp; Santolini, M. (2026). <i>Reading large text collections</i> [interactive website]. Available at https://github.com/InteractionDataLab/broad-listening.</p>
+  <p>Nuruzzaman, M., Tupikina, L., &amp; Santolini, M. (2026). <i>Reading large text collections</i> [interactive dashboard]. https://interactiondatalab.github.io/broad-listening/</p>
 </div></div></section>
 </main>
 <footer class="site"><div class="wrap"><p>Page and figures: CC BY 4.0. Code: Apache-2.0.</p></div></footer>
