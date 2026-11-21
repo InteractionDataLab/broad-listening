@@ -52,4 +52,8 @@ See `CITATION.cff`.
 
 ## Authors
 
-Md Nuruzzaman, Liubov Tupikina, Marc Santolini. Interaction Data Lab, INSERM U1338.
+Md Nuruzzaman<sup>1</sup>, Liubov Tupikina<sup>1,3</sup> and Marc Santolini<sup>1,2</sup>
+
+1. Learning Transitions, Learning Planet Institute and CY Cergy Paris University, Paris, France
+2. Sorbonne université CNRS, ERL U1338 inserm, Paris, France
+3. Nokia Bell labs, France
