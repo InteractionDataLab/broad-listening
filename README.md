@@ -21,8 +21,8 @@ Dashboard: https://interactiondatalab.github.io/broad-listening/
 |---|---|---|
 | Clean | Language detection; junk screened before cleaning; texts kept as written | Counts of removed and retained texts, per language |
 | Embed | Qwen3-Embedding-8B, multilingual, no translation | Embedding quality |
-| Map | UMAP; settings chosen by a sweep; fixed seed | Trustworthiness and continuity of the map |
-| Group | HDBSCAN for sub-themes, Ward linkage for themes; settings screened by density-based validity (DBCV) and bootstrap stability; texts that fit no group stay unplaced and are counted | Stability across seeds and resamples (adjusted Rand index), per-theme Jaccard, silhouette; themes tested against the survey questions, so that they cut across them; comparison with a second method (survey) and a second embedding model (MSF) |
+| Map | UMAP with fixed seeds; settings chosen by a sweep (survey) | Trustworthiness and continuity of the map |
+| Group | HDBSCAN for sub-themes, Ward linkage for themes; settings screened by density-based validity (DBCV) and bootstrap stability (survey); texts that fit no group stay unplaced and are counted | Stability across seeds and resamples (adjusted Rand index), per-theme Jaccard, silhouette; themes tested against the survey questions, so that they cut across them; comparison with a second method (survey) and a second embedding model (MSF) |
 | Name | A language model proposes a name and may refuse | Grounding in quotes, a judge given held-out texts, and an embedding check; names that fail are withheld |
 | Validate | | Agreement with a reference codebook (survey); a machine second coder and a self-test on data with known groups (MSF) |
 | Compare | Permutation tests, shuffling teams or countries; Benjamini-Hochberg correction | 95% ranges and statistical power |
