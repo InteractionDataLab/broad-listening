@@ -9,8 +9,8 @@ far each theme can be trusted.
 
 You give it a CSV with a free-text column. You get back a theme for each answer
 (or "unplaced"), a name and a grade for each theme, a sentiment for each answer,
-and group comparisons with corrected p-values and intervals. Every check is
-allowed to fail: a theme that fails one is marked, not hidden.
+and group comparisons with corrected p-values and intervals. Themes that fail a
+check are flagged in the output, not removed.
 
 ![Themes found in the study corpus](docs/demo_explorer.png)
 
@@ -72,23 +72,21 @@ downloads two open models. No answer text is sent to an online service.
 A step saves its result under a key made from its settings, so changing one
 setting re-runs only the steps after it.
 
-- **Names are checked.** A name must be supported by quotes from the group,
-  confirmed by a judge shown other members of the group, and sit closer to its own
-  group than to any other. A name that fails is withheld.
-- **Grades.** *Claimable*: passed every check. *Descriptive*: can be shown, not
-  tested (unstable under resampling, or too few people raised it). *Artifact*: the
-  name failed its checks and is never printed.
-- **Sentiment must quote the text.** One of six levels, with the words behind it;
-  if the quote is not in the answer, the score is withheld.
-- **Group comparisons** use Benjamini-Hochberg correction, Wilson intervals and
-  Cliff's delta, with PERMANOVA for whole profiles and TOST for equivalence. "No
-  difference" comes with the smallest difference the data could have detected.
+- Names: a name must be supported by quotes from the group, confirmed by a judge
+  shown other members of the group, and sit closer to its own group than to any
+  other. A name that fails is withheld.
+- Grades: *claimable* (passed every check), *descriptive* (can be shown but not
+  tested: unstable under resampling, or raised by too few people), *artifact* (the
+  name failed its checks and is not printed).
+- Sentiment: one of six levels, with the quoted words behind it; if the quote is
+  not in the answer, the score is withheld.
+- Group comparisons: Benjamini-Hochberg correction, Wilson intervals and Cliff's
+  delta, with PERMANOVA for whole profiles and TOST for equivalence. A result of
+  "no difference" is reported with the smallest difference the data could detect.
 
-**Is it for you?** It fits a few hundred to a few thousand short answers, in one
-or several languages, when you need to know what people said, how often, and
-whether two groups differ. It does not fit long transcripts as they are (split
-them first), and a full run takes hours. It has been checked on one corpus of
-1,505 answers in 125 groups, and not beyond.
+Scope: a few hundred to a few thousand short answers, in one or several
+languages. Long transcripts must be split first, and a full run takes hours. The
+package has been checked on one corpus of 1,505 answers in 125 groups.
 
 ## Data and privacy
 
