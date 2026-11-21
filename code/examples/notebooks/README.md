@@ -13,12 +13,12 @@ sentiment distribution in notebook 6: six counts and a withheld count, no text.
 | 2 | [Embedding](02_embed.ipynb) | the available models, and how caching avoids re-running steps |
 | 3 | [Dimensionality reduction](03_reduce.ipynb) | UMAP, and how much it distorts the data |
 | 4 | [Clustering](04_cluster.ipynb) | Ward and HDBSCAN side by side, stability, and the evidence grade |
-| 5 | [Naming](05_name.ipynb) | what the model sees, the checks a name must pass, and refusals |
+| 5 | [Naming](05_name.ipynb) | the input given to the model, the checks a name must pass, and refusals |
 | 6 | [Sentiment](06_sentiment.ipynb) | the six levels, the quote check, and the study's real distribution |
 | 7 | [Statistics](07_statistics.ipynb) | shares with intervals, correction for many tests, effect sizes, and what "no difference" means |
 
-If you read only one, read notebook 4 (should you believe a clustering?) or
-notebook 6 (a sentiment score is refused when the model cannot quote the text).
+Notebook 4 shows the stability checks of a clustering; notebook 6 shows how a
+sentiment score is withheld when the model cannot quote the text.
 
 ## How these differ from `analysis/`
 
@@ -29,9 +29,8 @@ notebook 6 (a sentiment score is refused when the model cannot quote the text).
 | Can be run | yes, anywhere | read and check only |
 | Purpose | learn the pipeline | record of the study |
 
-The notebooks were generated and executed by a script kept outside the
-repository, so each output was produced by the code above it. Figures are static
-PNG images because GitHub does not display interactive Plotly figures.
+Each output was produced by the code above it. Figures are static PNG images,
+because GitHub does not display interactive Plotly figures.
 
 The scripts in [`../`](..) cover the same steps, plus `05_real_pipeline.py` for
 your own file and `run_in_colab.ipynb` for a free Colab GPU.
