@@ -1,0 +1,48 @@
+# Artefacts and caches. The artefact store holds embeddings and verdicts derived
+# from the raw responses, and the model cache is gigabytes.
+artifacts/
+model_cache/
+hf_cache/
+examples/output/
+
+# Data. No real corpus belongs in this repository.
+*.csv
+*.tsv
+*.pkl
+*.parquet
+!tests/**/*.csv
+
+# Generated explorers can contain verbatim response text, so HTML is ignored,
+# except the published figures in docs/. Those were built with include_text=False
+# and checked by reading each file back and searching it for verbatim responses,
+# team names and participant ids. They are listed one by one on purpose.
+*.html
+!docs/index.html
+!docs/demo_explorer.html
+!docs/explorer_3d.html
+!docs/sankey_beyond_igem.html
+!docs/sankey_conditions.html
+!docs/sankey_connection.html
+!docs/sankey_one_word.html
+!docs/sankey_team_work.html
+!docs/sentiment.html
+!docs/theme_prevalence.html
+!docs/evidence_tiers.html
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# Editors
+.vscode/
+.idea/
+.DS_Store
