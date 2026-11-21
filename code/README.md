@@ -124,10 +124,10 @@ not been re-run end to end inside the test suite.
 
 ## Author, funding, citation, licence
 
-Md Nuruzzaman, Liubov Tupikina and Marc Santolini (affiliations in the README of the
-repository). Developed during a Master's research internship (M1 AIRE, Université
+Authors: Md Nuruzzaman, Liubov Tupikina and Marc Santolini. Developed during a Master's research internship (M1 AIRE, Université
 Paris Cité), for a study of open-ended answers from the iGEM 2025 survey, part of
-the ANR project Open Futures (OPEN-FUTURES).
+the ANR project Open Futures (OPEN-FUTURES). Supervision: Marc Santolini and
+Liubov Tupikina.
 
 To cite the software, use "Cite this repository" (from `CITATION.cff`). For the
 methods, cite their authors, named in the docstring of each function: Benjamini

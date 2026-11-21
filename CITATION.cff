@@ -5,12 +5,12 @@ type: software
 authors:
   - family-names: "Nuruzzaman"
     given-names: "Md"
-    affiliation: "Learning Transitions, Learning Planet Institute and CY Cergy Paris University, Paris, France"
+    affiliation: "Interaction Data Lab, INSERM U1338"
   - family-names: "Tupikina"
     given-names: "Liubov"
-    affiliation: "Learning Transitions, Learning Planet Institute and CY Cergy Paris University, Paris, France; Nokia Bell labs, France"
+    affiliation: "Learning Planet Institute"
   - family-names: "Santolini"
     given-names: "Marc"
-    affiliation: "Learning Transitions, Learning Planet Institute and CY Cergy Paris University, Paris, France; Sorbonne université CNRS, ERL U1338 inserm, Paris, France"
+    affiliation: "Interaction Data Lab, INSERM U1338"
 repository-code: "https://github.com/InteractionDataLab/broad-listening"
 license: Apache-2.0
