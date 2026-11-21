@@ -20,12 +20,14 @@ Dashboard: https://interactiondatalab.github.io/broad-listening/
 | Step | Method | Check |
 |---|---|---|
 | Clean | Language detection; junk screened before cleaning; texts kept as written | Counts of removed and retained texts, per language |
-| Embed | Qwen3-Embedding-8B, multilingual, no translation | Embedding quality |
+| Embed | Qwen3-Embedding-8B, multilingual, no translation; unit-norm vectors, so similarity is cosine | Norm distribution, similarities against a random-pair baseline, within- versus between-question separation, effective dimensionality (survey); a translation test (MSF) |
 | Map | UMAP with fixed seeds; settings chosen by a sweep (survey) | Trustworthiness and continuity of the map |
 | Group | HDBSCAN for sub-themes, Ward linkage for themes; settings screened by density-based validity (DBCV) and bootstrap stability (survey); texts that fit no group stay unplaced and are counted | Stability across seeds and resamples (adjusted Rand index), per-theme Jaccard, silhouette; themes tested against the survey questions, so that they cut across them; comparison with a second method (survey) and a second embedding model (MSF) |
 | Name | A language model proposes a name (in the survey it may refuse) | Survey: grounding in quotes, a judge given held-out texts, and an embedding check; names that fail are withheld. MSF: a name gate (a distinctive word of its own cluster, a better fit to its own cluster than to any other, uniqueness); a name that fails twice is replaced by a label built from the cluster's terms |
 | Validate | | Agreement with a reference codebook (survey); a machine second coder and a self-test on data with known groups (MSF) |
 | Compare | Permutation tests, shuffling teams or countries; Benjamini-Hochberg correction | 95% ranges and statistical power |
+
+The notebook and stage of each check are listed in `code/analysis/README.md`.
 
 ## Collections
 

@@ -87,6 +87,27 @@ and `igem-r5.json` of the dashboard.
 | `MSF_NB2_executed_2026-10-05.ipynb` | Groups the passages (HDBSCAN, then Ward on the sub-theme centres), names the themes (Qwen3-4B-Instruct-2507), checks stability, a second embedding model, a self-test on artificial data and a machine second coder. |
 | `MSF_NB3_Group_Models_executed_2026-11-09.ipynb` | Themes by country and year, comparison of the themes with the topic word lists, statistical power. Its results are the file `msf-r4.json` of the dashboard. |
 
+## Checks and where to find them
+
+Survey notebooks are 01 to 04 in this folder; MSF notebooks are in `msf/`. The numbers are the stage numbers printed in each notebook.
+
+| Step | Check | Survey | MSF |
+|---|---|---|---|
+| Clean | Language detection, junk and outliers screened before cleaning, retention per language | 01: stages 10, 11, 14b | NB1: stages 4, 5, 5a (one version per story) |
+| Embed | Vectors L2-normalised (unit norm), so similarity is cosine | 01: stage 16 | NB1: stage 9 |
+| Embed | Norm distribution; question-by-question similarity centred on a random-pair baseline (anisotropy); within- minus between-question separation with bootstrap 95% intervals; effective dimensionality (PCA variance, participation ratio) | 01: stage 17 | |
+| Embed | Passages cut by the length limit; spread of similarities; translation test (a translated story should land next to its English original); language offsets | | NB1: stage 9 |
+| Map | Settings sweep; seeded projection; trustworthiness and continuity | 02: stages 19, 20, 24 | NB1: stage 10 |
+| Group | Screening of 1,512 settings by density-based validity (DBCV) and bootstrap stability; two levels (HDBSCAN, then Ward) | 02: stages 21H, 23H | NB2: stages 14, 15 (HDBSCAN leaf clusters on five seeded projections, then Ward) |
+| Group | Stability across seeds and resamples (adjusted Rand index), per-theme Jaccard, silhouette | 02: stage 25 | NB2: stage 16 |
+| Group | Themes against the source question (a low adjusted Rand index means the themes cut across the questions) | 02: stage 26 | |
+| Group | Comparison with a second method; with a second embedding model | 02: stage 29 | NB2: stage 16b |
+| Name | Grounding in quotes, held-out judge, embedding check; refusal allowed | 02: stages 30, 30v | |
+| Name | Name gate (distinctive word, better fit to its own cluster, uniqueness); summaries checked against their text | | NB2: stages 18, 19c |
+| Validate | Agreement with a reference codebook | 03: stages 17 to 19 | |
+| Validate | Machine second coder (kappa); self-test on data with known groups; precision and recall of the health word lists against a human sample | | NB2: stages 20, 21; NB1: stages 7, 7b, 7c |
+| Compare | Permutation tests, bootstrap ranges, Benjamini-Hochberg, statistical power | 03: stages 24 to 39; 04 | NB3: parts 2 to 8 |
+
 ## Runs
 
 Notebooks 1 to 3 of the survey were run on 2 November 2026; the clustering and
