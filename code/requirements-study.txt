@@ -1,0 +1,33 @@
+# The environment the study ran in: exact versions, as a record (not an install
+# target; the corpus is not in this repository, see analysis/README.md).
+# pyproject.toml declares loose lower bounds for the library; this file lists the
+# versions that produced the study's numbers. Each version is copied from the
+# environment fingerprint printed in the analysis notebooks. Where two notebooks
+# record the same package they agree.
+#
+# Hardware: one NVIDIA L4 GPU, on Google Colab.
+
+numpy==2.0.2
+pandas==2.2.2
+scipy==1.16.3
+scikit-learn==1.6.1
+umap-learn==0.5.12
+plotly==5.24.1
+
+# The two model stages. torch was the CUDA 12.8 build; that exact wheel needs
+# PyTorch's own index:
+#     pip install torch==2.11.0 --index-url https://download.pytorch.org/whl/cu128
+torch==2.11.0
+transformers==5.13.1
+sentence-transformers==5.6.0
+
+# Models, downloaded at run time. Both are open-weight and ran locally, so no
+# response text reached a hosted API. Their licences are listed in NOTICE.
+#     embedding   Qwen/Qwen3-Embedding-8B
+#     labelling   Qwen/Qwen2.5-14B-Instruct
+
+# NOT RECORDED, so not pinned: the notebooks' fingerprint did not cover these.
+#     hdbscan, matplotlib, lingua-language-detector, contractions, spacy,
+#     vaderSentiment (the lexicon baseline), and the Python version.
+# kaleido was reported as "(not found)": static image export was unavailable in
+# that session, and the figures were exported another way.

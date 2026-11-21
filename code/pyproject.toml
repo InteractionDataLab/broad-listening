@@ -1,0 +1,64 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "broadlisten"
+version = "0.1.0.dev0"
+description = "A pipeline for discovering themes in open-ended survey text, with seeded steps"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+authors = [{ name = "Md Nuruzzaman" }]
+keywords = ["nlp", "topic-modelling", "thematic-analysis", "clustering",
+            "survey-research", "qualitative-research", "embeddings"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Text Processing :: Linguistic",
+]
+
+# The base install is small. Anything that needs a GPU, a model download or a
+# compiler is optional.
+dependencies = [
+    "numpy>=1.24",
+    "pandas>=2.0",
+    "scikit-learn>=1.3",
+    "scipy>=1.10",
+]
+
+[project.optional-dependencies]
+embed    = ["sentence-transformers>=3.3", "transformers>=4.51", "torch>=2.0"]
+reduce   = ["umap-learn>=0.5.4"]
+cluster  = ["hdbscan>=0.8.33"]
+language = ["lingua-language-detector>=2.0", "contractions>=0.1.73"]
+keywords = ["spacy>=3.8"]
+viz      = ["matplotlib>=3.7", "plotly>=5.18"]
+all      = ["broadlisten[embed,reduce,cluster,language,keywords,viz]"]
+dev      = ["broadlisten[reduce,cluster,viz]", "pytest>=7.4", "ruff>=0.4"]
+
+[project.scripts]
+broadlisten = "broadlisten.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/InteractionDataLab/broad-listening"
+Repository = "https://github.com/InteractionDataLab/broad-listening"
+Issues = "https://github.com/InteractionDataLab/broad-listening/issues"
+Changelog = "https://github.com/InteractionDataLab/broad-listening/blob/main/code/CHANGELOG.md"
+
+[tool.setuptools.packages.find]
+include = ["broadlisten*"]
+
+# PEP 561: lets type checkers use the package's annotations.
+[tool.setuptools.package-data]
+broadlisten = ["py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"

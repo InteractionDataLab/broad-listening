@@ -1,0 +1,27 @@
+broadlisten
+Copyright 2026 Md Nuruzzaman
+
+Written during a Master's research internship (M1 AIRE, Université Paris Cité)
+on a study of open-ended survey responses from a challenge-based learning
+programme, and released so that the methods can be inspected and reused.
+
+The study was carried out within the ANR project Open Futures (OPEN-FUTURES),
+"Open science and the future researcher: multi-level analysis of the iGEM
+community-based open science ecosystem".
+
+No survey data, participant text, or identifiers are included in this
+repository. The corpus in broadlisten/sample.py is entirely synthetic and was
+written to exercise the code; it is not an extract of any real dataset.
+
+This software calls, but does not redistribute, the following models. Each is
+downloaded at run time from its own source and carries its own licence, which
+you are responsible for reading before use:
+
+  Qwen3-Embedding (Alibaba Cloud)     https://huggingface.co/Qwen
+  Qwen2.5-Instruct (Alibaba Cloud)    https://huggingface.co/Qwen
+  BGE-M3 (BAAI)                       https://huggingface.co/BAAI/bge-m3
+  en_core_web_sm (spaCy, MIT)         https://spacy.io/models/en
+
+Methods implemented here follow published work, cited in the docstring of the
+function that implements each one. The citations are attribution, not a claim
+of endorsement by those authors.

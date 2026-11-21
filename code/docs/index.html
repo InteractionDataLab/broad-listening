@@ -1,0 +1,133 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>broadlisten — theme explorers</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #fbfbfa; --fg: #1a1a18; --muted: #5c5c56;
+    --rule: #e2e2dd; --card: #ffffff; --accent: #2f5d50;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #16171a; --fg: #e8e8e4; --muted: #9a9a92;
+      --rule: #2c2e33; --card: #1d1f23; --accent: #7fb3a1;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 3rem 1.25rem 5rem;
+    background: var(--bg); color: var(--fg);
+    font: 16px/1.6 ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  main { max-width: 46rem; margin: 0 auto; }
+  h1 { font-size: 1.75rem; margin: 0 0 .35rem; letter-spacing: -.01em; }
+  .sub { color: var(--muted); margin: 0 0 2.5rem; }
+  h2 { font-size: 1rem; text-transform: uppercase; letter-spacing: .08em;
+       color: var(--muted); margin: 2.75rem 0 .9rem; font-weight: 600; }
+  a { color: var(--accent); }
+  ul.cards { list-style: none; padding: 0; margin: 0; display: grid; gap: .6rem; }
+  ul.cards a {
+    display: block; padding: .85rem 1rem; text-decoration: none;
+    background: var(--card); border: 1px solid var(--rule); border-radius: 7px;
+    color: inherit;
+  }
+  ul.cards a:hover { border-color: var(--accent); }
+  ul.cards strong { color: var(--accent); font-weight: 600; }
+  ul.cards span { display: block; color: var(--muted); font-size: .9rem; }
+  .note {
+    margin-top: 3rem; padding: 1rem 1.15rem; border-left: 3px solid var(--accent);
+    background: var(--card); font-size: .93rem;
+  }
+  .note p { margin: 0 0 .7rem; }
+  .note p:last-child { margin-bottom: 0; }
+  footer { margin-top: 3rem; padding-top: 1.25rem; border-top: 1px solid var(--rule);
+           color: var(--muted); font-size: .88rem; }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .9em; }
+</style>
+
+<main>
+  <h1>broadlisten — theme explorers</h1>
+  <p class="sub">
+    1,505 open-ended survey responses from a challenge-based learning
+    programme, grouped into 39 themes. These are the figures from the analysis,
+    with the responses themselves withheld.
+  </p>
+
+  <h2>The map</h2>
+  <ul class="cards">
+    <li><a href="demo_explorer.html">
+      <strong>Themes in two dimensions</strong>
+      <span>All 1,505 responses, projected with seeded UMAP at a faithfulness
+      of 0.895. Hover a point, click a theme in the legend to isolate it, zoom.
+      Grey points are the responses the clustering left unplaced.</span>
+    </a></li>
+    <li><a href="explorer_3d.html">
+      <strong>Themes in three dimensions</strong>
+      <span>The same corpus at a faithfulness of 0.920. Drag to rotate.</span>
+    </a></li>
+  </ul>
+
+  <h2>What the study found</h2>
+  <ul class="cards">
+    <li><a href="sentiment.html">
+      <strong>Sentiment across the corpus</strong>
+      <span>1,475 responses received a verdict; 30 were refused because the
+      model could not quote the span it claimed to describe. The refusals are on
+      the chart, because leaving them off would raise every other bar.</span>
+    </a></li>
+    <li><a href="theme_prevalence.html">
+      <strong>Theme prevalence</strong>
+      <span>How much of the corpus each of the 39 themes accounts for, with 95%
+      Wilson intervals, and the unplaced share shown alongside.</span>
+    </a></li>
+    <li><a href="evidence_tiers.html">
+      <strong>What each theme may be used for</strong>
+      <span>18 Claimable, 17 Descriptive, 4 Artifact. A downgraded theme keeps
+      its place in every descriptive figure; it loses the right to carry a
+      finding, not its right to exist.</span>
+    </a></li>
+  </ul>
+
+  <h2>Theme structure, by question</h2>
+  <ul class="cards">
+    <li><a href="sankey_beyond_igem.html">
+      <strong>Beyond iGEM</strong><span>22 themes over 297 responses</span></a></li>
+    <li><a href="sankey_conditions.html">
+      <strong>Conditions</strong><span>27 themes over 302 responses</span></a></li>
+    <li><a href="sankey_connection.html">
+      <strong>Connection</strong><span>23 themes over 319 responses</span></a></li>
+    <li><a href="sankey_one_word.html">
+      <strong>One Word</strong><span>24 themes over 282 responses</span></a></li>
+    <li><a href="sankey_team_work.html">
+      <strong>Team Work</strong><span>26 themes over 305 responses</span></a></li>
+  </ul>
+
+  <div class="note">
+    <p><strong>No participant wrote anything you can read on this site.</strong>
+    Every figure here was built with <code>include_text=False</code>, so the
+    responses behind the points are not in the files. Each one was then checked
+    by reading the written file back and searching it for verbatim responses,
+    for all 125 team names, and for the participant identifiers. The build
+    refuses to finish if it finds any.</p>
+
+    <p>Four themes read <strong>[label withheld]</strong>. Those are the ones
+    whose labels failed verification, and the package does not print a label its
+    own checks rejected.</p>
+
+    <p>Every chart on this page is counts and proportions. Nothing a
+    participant wrote appears in any of them.</p>
+
+    <p>Two figures from the original analysis are deliberately absent: the team
+    profile and team award explorers. Both are keyed by team, and withholding
+    response text does nothing about that — a named team of a few people, with a
+    country and a topic, is identifiable regardless.</p>
+  </div>
+
+  <footer>
+    Built with <a href="https://github.com/Nuruzzaman-NS/broadlisten">broadlisten</a>,
+    an Apache-2.0 package for finding themes in open-ended survey text.
+    Written by Md Nuruzzaman during a Master's research internship (M1 AIRE,
+    Université Paris Cité), within the ANR project Open Futures.
+  </footer>
+</main>
